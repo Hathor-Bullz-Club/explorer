@@ -1,0 +1,11 @@
+body {
+    background-color: ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  h1 {
+    color: darkslategray;
+    font-size: 3em;
+    text-shadow: 2px 2px 5px grey;
+  }

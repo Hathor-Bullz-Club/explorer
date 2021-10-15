@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Explorer - Hathor Bullz Club</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+  <body class="d-flex flex-column h-100">
+
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bullz Explorer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
+
+          </li>
+        </ul>
+        <div class="col-sm-5">
+          <form class="d-flex">
+            <input class="form-control  me-2" id="tx-id" type="search" placeholder="Tx ID" aria-label="Search">
+            <button class="btn btn-outline-success" id="get-data" type="submit">Search</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container" id="show-nft">
+    <br/>
+    <h5>Tx ID: </h5><a id="lbl-tx-id"></a><br/>
+    <h5>Name: </h5><h5 id="lbl-name"></h5><br/>
+    <h5>Description: </h5><h5 id="lbl-desc"></h5><br/>
+    <h5>Attributes</h5><br/>
+    <ul style="list-style-type:none">
+      <li><h6>ID: </h6><h6 id="att-id"></h6></li>
+      <li><h6>Hash: </h6><h6 id="att-hash"></h6></li>
+    </ul>
+
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light text-center">
+  <div class="container">
+    <span class="text-muted">© 2021 - Hathor Bullz Club NFT Viewer by Team</span>
+  </div>
+</footer>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bullz.js"></script>
+
+  </body>
+</html>
