@@ -34,6 +34,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
   </head>
   <body class="d-flex flex-column h-100">
 
@@ -60,7 +61,7 @@
         <div class="col-sm-5">
           <form class="d-flex">
             <input class="form-control  me-2" id="tx-id" type="search" placeholder="Tx ID" aria-label="Search">
-            <button class="btn btn-outline-success" id="get-data" type="submit">Search</button>
+            <button class="btn btn-outline-light" id="get-data" type="submit">Search</button>
           </form>
         </div>
 
@@ -72,15 +73,56 @@
 <!-- Begin page content -->
 <main class="flex-shrink-0">
   <div class="container" id="show-nft">
-    <br/>
-    <h5>Tx ID: </h5><a id="lbl-tx-id"></a><br/>
-    <h5>Name: </h5><h5 id="lbl-name"></h5><br/>
-    <h5>Description: </h5><h5 id="lbl-desc"></h5><br/>
-    <h5>Attributes</h5><br/>
-    <ul style="list-style-type:none">
-      <li><h6>ID: </h6><h6 id="att-id"></h6></li>
-      <li><h6>Hash: </h6><h6 id="att-hash"></h6></li>
-    </ul>
+    <div class="float-container d-flex justify-content-center">
+
+      <div class="float-child">
+        <div id="div_esquerda">
+          <br/>
+          <h4>Informations</h4>
+          <br/>
+          <ol class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-sm-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Tx Id</div>
+                <label><a id="lbl-tx-id"></a></label>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-md-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Name</div>
+                <label id="lbl-name"></label>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Description</div>
+                <label id="lbl-desc"></label>
+              </div>
+            </li>
+          </ol>
+
+          <br/>
+          <h4>Attributes</h4>
+          <br/>
+          <ol id="att_list" class="list-group">
+          </ol>
+        </div>
+      </div>
+
+      <div class="float-child">
+        <div id="div_direita">
+          <br/>
+          <h4>NFT</h4>
+          <br/>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
 
   </div>
 </main>

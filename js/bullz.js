@@ -2,7 +2,7 @@ var public_api_node = 'https://node1.mainnet.hathor.network/v1a/transaction?id='
 var public_explorer_tx = 'https://explorer.hathor.network/transaction/';
 
 var img = document.createElement('img');
-img.setAttribute('style', 'width: 20%; height: 20%;');
+img.setAttribute('style', 'width: 50%; height: 50%;');
 
 $("#get-data").on('click', function(event){
 	event.preventDefault();
@@ -19,23 +19,48 @@ $("#get-data").on('click', function(event){
             $.getJSON(json_nft, (data) => {
 
                 var div = document.getElementById('show-nft');
+                var div_direita = document.getElementById('div_direita');
                 var h5_tx_id = document.getElementById('lbl-tx-id');
+                clearElement(h5_tx_id);
                 var h5_name = document.getElementById('lbl-name');
+                clearElement(h5_name);
                 var h5_desc = document.getElementById('lbl-desc');
-                var h5_att_id = document.getElementById('att-id');
-                var h5_att_hash = document.getElementById('att-hash');
+                clearElement(h5_desc);
+                var att_list = document.getElementById('att_list');
+                clearElement(att_list);
+
+
 
                 h5_tx_id.innerHTML = tx_id;
                 h5_tx_id.href = public_explorer_tx+tx_id;
                 h5_name.innerHTML = data["name"];
                 h5_desc.innerHTML = data["description"];
-                h5_att_id.innerHTML = data["attributes"][0]["value"];
-                h5_att_hash.innerHTML = data["attributes"][1]["value"];
+
+
+
+                for(var i=0;i <  Object.keys(data["attributes"]).length;i++){
+
+                    var li = document.createElement('li');
+                    li.setAttribute('class',"list-group-item d-flex justify-content-between align-items-sm-start");
+                    var div_1 = document.createElement('div');
+                    div_1.setAttribute('class',"ms-2 me-auto");
+                    var div_2 = document.createElement('div');
+                    div_2.setAttribute('class',"fw-bold");
+                    div_2.innerHTML = data["attributes"][i]["type"];
+                    var lbl_content = document.createElement('label');
+                    lbl_content.innerHTML = data["attributes"][i]["value"];
+
+                    li.appendChild(div_1);
+                    div_1.appendChild(div_2);
+                    div_1.appendChild(lbl_content);
+                    att_list.appendChild(li);
+                }
 
                 // Cria a imagem dentro do html
-                div.appendChild(img);
+
+                div_direita.appendChild(img);
                 img.src = pegaIpfs(data["file"]);
-                div.appendChild(img);
+                div_direita.appendChild(img);
 
             });
         } );
@@ -43,6 +68,10 @@ $("#get-data").on('click', function(event){
     });
 
 });
+
+function clearElement(element){
+    element.innerHTML = "";
+}
 
 function pegaIpfs(data){
     var url = "";
