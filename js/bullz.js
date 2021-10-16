@@ -2,7 +2,7 @@ var public_api_node = 'https://node1.mainnet.hathor.network/v1a/transaction?id='
 var public_explorer_tx = 'https://explorer.hathor.network/transaction/';
 
 var img = document.createElement('img');
-img.setAttribute('style', 'width: 50%; height: 50%;');
+img.setAttribute('style', 'width: 75%; height: 75%;');
 
 $("#get-data").on('click', function(event){
 	event.preventDefault();
