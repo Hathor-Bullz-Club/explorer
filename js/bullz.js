@@ -87,7 +87,9 @@ function pegaIpfs(data){
         let reg = /(ipfs:\/)(\/\w+\/\w+)(\/[\w+_-]*.json|\/[\w+_-]*.jpg|\/[\w+_-]*.png|\/[\w+_-]*.gif|)/gm;
         let result = reg.exec(data);
 
-        if(result[3]){
+        const fileNameExist = result[3];
+
+        if(fileNameExist){
             url = result[2].concat(result[3]);
         }else {
             url = result[2];
