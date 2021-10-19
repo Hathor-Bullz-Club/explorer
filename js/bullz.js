@@ -80,13 +80,19 @@ function pegaIpfs(data){
     //converte de base64 para string
     try {
         var ipfs_decoded = atob(data);
-        let reg = /(ipfs:\/)(\/\w+\/\w+\/[\w+_-]*.)+(json|jpg|png|gif)/gm;
+        let reg = /(ipfs:\/)(\/\w+\/\w+)(\/[\w+_-]*.json|\/[\w+_-]*.jpg|\/[\w+_-]*.png|\/[\w+_-]*.gif|)/gm;
         let result = reg.exec(ipfs_decoded);
         url = result[2].concat(result[3]);
     }catch(e){
-        let reg = /(ipfs:\/)(\/\w+\/\w+\/[\w+_-]*.)+(json|jpg|png|gif)/gm;
+        let reg = /(ipfs:\/)(\/\w+\/\w+)(\/[\w+_-]*.json|\/[\w+_-]*.jpg|\/[\w+_-]*.png|\/[\w+_-]*.gif|)/gm;
         let result = reg.exec(data);
-        url = result[2].concat(result[3]);
+
+        if(result[3]){
+            url = result[2].concat(result[3]);
+        }else {
+            url = result[2];
+        }
+
     }
 
     return "https://ipfs.io".concat(url);
